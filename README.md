@@ -65,31 +65,42 @@ Contains all in-app purchases:
 ARPU  = total_revenue / total_users  
 ARPPU = total_revenue / total_payers  
 Payer Conversion = payers / total_users
-📊 Exploratory Analysis
-1. Revenue Distribution
 
-2. Revenue Share by Spender Segment
+---
 
-3. ARPU by Country
+## 📊 Exploratory Analysis
 
-4. ARPU by Acquisition Channel
+### **1. Revenue Distribution**
+![Revenue Distribution](images/revenue_distribution.png)
 
-🐳 Spender Segmentation (Whales, Dolphins, Minnows)
+### **2. Revenue Share by Spender Segment**
+![Spender Segments](images/spender_segments.png)
+
+### **3. ARPU by Country**
+![ARPU by Country](images/arpu_by_country.png)
+
+### **4. ARPU by Acquisition Channel**
+![ARPU by Channel](images/arpu_by_channel.png)
+
+---
+
+## 🐳 Spender Segmentation (Whales, Dolphins, Minnows)
+
 Users with revenue > 0 were segmented:
 
-Segment	Description	Share of Users	Share of Revenue
-Minnows	Small spenders	~50%	Low impact
-Dolphins	Medium spenders	~40%	Moderate impact
-Whales	Top spenders	~10%	Very high impact
+| Segment  | Description | Share of Users | Share of Revenue |
+|----------|-------------|----------------|------------------|
+| **Minnows**  | Small spenders | ~50% | Low impact |
+| **Dolphins** | Medium spenders | ~40% | Moderate impact |
+| **Whales**   | Top spenders | ~10% | Very high impact |
 
-Whales contribute a disproportionate share of revenue, consistent with the Pareto principle seen in most F2P games.
+Whales contribute a disproportionate share of revenue, consistent with the **Pareto principle** seen in most F2P games.
 
-🗄 SQL Analysis (SQLite)
-SQL is widely used in live-ops, BI systems, and monetization dashboards.
+---
 
-Revenue by country and platform
-sql
-Copiar código
+## 🗄 SQL Analysis (SQLite)
+
+### **Revenue by country and platform**
 SELECT 
     country,
     platform,
@@ -134,7 +145,7 @@ Paid channels (Facebook Ads, Google Ads, TikTok Ads) bring more high-value users
 
 Organic users have lower payer conversion but strong overall engagement.
 
-Medium-spenders ("dolphins") present a major monetization opportunity via upsell.
+Medium-spenders (“dolphins”) present a major monetization opportunity.
 
 💡 Recommendations
 Increase UA investment in high-ARPU and high-ARPPU acquisition channels.
@@ -145,7 +156,7 @@ Develop whale retention strategies (exclusive items, VIP events, bundles).
 
 Localize pricing and promotions by country to maximize conversion.
 
-Expand analysis with retention and engagement metrics to build complete LTV models.
+Expand analysis with retention + engagement metrics to build LTV models.
 
 🧰 Tech Stack
 Python: Pandas, NumPy, Matplotlib, Seaborn
@@ -154,12 +165,12 @@ SQL: SQLite
 
 Jupyter Notebook
 
-KPIs: ARPU, ARPPU, payer conversion, whale analysis
+KPIs: ARPU, ARPPU, payer conversion, whale segmentation
 
 📁 Repository Structure
 kotlin
 Copiar código
-gaming-monetization-analysis/
+gaming_monetization/
 ├── data/
 │   ├── gaming_users_dataset.csv
 │   └── gaming_purchases_dataset.csv
